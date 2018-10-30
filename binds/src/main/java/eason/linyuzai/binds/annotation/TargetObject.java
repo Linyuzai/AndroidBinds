@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 /**
  * Mark Class or Field needs inject
  */
-@Target(ElementType.TYPE)
+@Target({ElementType.TYPE, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Inherited

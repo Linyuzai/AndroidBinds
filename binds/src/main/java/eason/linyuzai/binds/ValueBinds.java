@@ -38,6 +38,44 @@ public final class ValueBinds {
     }
 
     /**
+     * Call this on Fragment#onCreateView()
+     *
+     * @param fragment android.app.Fragment
+     */
+    public static void inject(android.app.Fragment fragment) {
+        try {
+            Injection.injectAnnotation(fragment.getActivity(), fragment);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Call this on Fragment#onCreateView()
+     *
+     * @param fragment android.support.v4.app.Fragment
+     */
+    public static void inject(android.support.v4.app.Fragment fragment) {
+        try {
+            Injection.injectAnnotation(fragment.getActivity(), fragment);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * Bind text text
      * Set target value by control value
      * Get control value by target source
