@@ -151,7 +151,7 @@ An Android MVVM Library
     }
 ```
 - it will be called when value changed
-- it will not be called if value is the same by default, use @BindXXX(ignoreSame = false) to force call.
+- by default, it will not be called if value is the same, use @BindXXX(ignoreSame = false) to force call.
 ## View Reference
 ```
     @BindText(value = R.id.text, viewReference = true)
