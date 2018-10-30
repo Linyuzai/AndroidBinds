@@ -12,9 +12,9 @@ An Android MVVM Library
 - CheckedTarget&lt;Boolean&gt;
 
 ## Support Attrbutes
-- Text for TextView, effect getText() and setText().
-- Visible for View, effect getVisibility() and setVisibility().
-- Checked for CompoundButton(CheckBox, RadioButton), effect isChecked() and setChecked().
+- Text for views extends TextView, effect getText() and setText().
+- Visible for views extends View, effect getVisibility() and setVisibility().
+- Checked for views extends CompoundButton, effect isChecked() and setChecked().
 
 ## Use
 ```
@@ -37,7 +37,7 @@ An Android MVVM Library
         checked.setValue(true);
     }
 ```
-- use ValueBinds.inject(Activity) to effect binds.
+- use ValueBinds.inject() to effect binds.
 - use target.setValue() and target.getValue() to handle view attrbutes.
 
 ## Convertor
