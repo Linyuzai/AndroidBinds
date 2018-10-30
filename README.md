@@ -126,6 +126,7 @@ An Android MVVM Library
         
         Map<String, String> map1 = user.toMap();
     }
+    
     public class User implements TargetMapSupport {
 
         @BindText(R.id.username)
@@ -164,3 +165,4 @@ An Android MVVM Library
         TextView t = title.getView();
     }
 ```
+- use target.getView() to get view reference.
