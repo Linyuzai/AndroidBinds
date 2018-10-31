@@ -80,10 +80,11 @@ public final class ValueBinds {
      * Set target value by control value
      * Get control value by target source
      *
-     * @param textViews Target source
-     * @param read      Can get value
-     * @param write     Can set value
-     * @param <V>       Control value type
+     * @param textViews     Target source
+     * @param read          Can get value
+     * @param write         Can set value
+     * @param viewReference Hold view reference
+     * @param <V>           Control value type
      * @return TextTarget
      * @see TextTarget
      */
@@ -132,8 +133,9 @@ public final class ValueBinds {
      * Bind view visible
      * Set target value by control value
      *
-     * @param views Target source
-     * @param <V>   Control value type
+     * @param views         Target source
+     * @param viewReference Hold view reference
+     * @param <V>           Control value type
      * @return VisibleTarget
      * @see VisibleTarget
      */
@@ -164,6 +166,7 @@ public final class ValueBinds {
      * @param compoundButtons Target source
      * @param read            Can get value
      * @param write           Can set value
+     * @param viewReference   Hold view reference
      * @param <V>             Control value type
      * @return CheckedTarget
      * @see CheckedTarget
@@ -195,6 +198,11 @@ public final class ValueBinds {
         return target;
     }
 
+    /**
+     * Perform listener
+     *
+     * @param target which listeners need perform
+     */
     private static void performListener(ValueTarget<?, ?> target) {
         for (ValueTarget.Listener listener : target.getListeners()) {
             if (null == listener)

@@ -1,5 +1,6 @@
 package eason.linyuzai.binds.reflect;
 
+@Deprecated
 public class Reflect {
 
     public static class ReflectTarget {

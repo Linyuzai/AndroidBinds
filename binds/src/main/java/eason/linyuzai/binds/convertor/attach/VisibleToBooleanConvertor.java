@@ -4,6 +4,10 @@ import android.view.View;
 
 import eason.linyuzai.binds.convertor.IntConvertor;
 
+/**
+ * For visible of View
+ * Type of target value is Integer and type of control value is Boolean
+ */
 public class VisibleToBooleanConvertor implements IntConvertor<Boolean> {
 
     @Override

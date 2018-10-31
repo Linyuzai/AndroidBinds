@@ -2,6 +2,9 @@ package eason.linyuzai.binds.convertor.self;
 
 import eason.linyuzai.binds.convertor.StringConvertor;
 
+/**
+ * Type of target value and control value are String
+ */
 public class StringSelfConvertor implements StringConvertor<String> {
 
     @Override

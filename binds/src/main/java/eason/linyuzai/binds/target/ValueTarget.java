@@ -62,7 +62,7 @@ public interface ValueTarget<V, T> {
     /**
      * An interface to notify target source
      *
-     * @param <T>
+     * @param <T> Target value
      */
     interface Setter<T> {
 
@@ -79,8 +79,8 @@ public interface ValueTarget<V, T> {
      * and
      * convert control value to target value
      *
-     * @param <V>Control value type
-     * @param <T>Target  value type
+     * @param <V>Type of control value
+     * @param <T>Type of target value
      */
     interface Convertor<V, T> {
 
@@ -101,7 +101,7 @@ public interface ValueTarget<V, T> {
         V toValue(T v);
 
         /**
-         * To support Map<String, String> convert
+         * To support Map convert
          *
          * @param v Map string value
          * @return Control value
@@ -111,7 +111,7 @@ public interface ValueTarget<V, T> {
         }
 
         /**
-         * To support Map<String, String> convert
+         * To support Map convert
          *
          * @param v Control value
          * @return Map string value
@@ -121,7 +121,13 @@ public interface ValueTarget<V, T> {
         }
     }
 
+    /**
+     * Listener for value changed
+     */
     interface Listener {
+        /**
+         * Call this method when value changed
+         */
         void onListen();
     }
 }

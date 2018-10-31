@@ -76,6 +76,14 @@ public class Injection {
         }
     }
 
+    /**
+     * Inject text for views extends TextView
+     *
+     * @param activity Activity context
+     * @param field    Field needs inject
+     * @param object   Object instance
+     * @throws IllegalAccessException IllegalAccessException
+     */
     @SuppressWarnings("unchecked")
     private static void injectText(Activity activity, Field field, Object object) throws IllegalAccessException {
         BindText bta = field.getAnnotation(BindText.class);
@@ -113,6 +121,14 @@ public class Injection {
         field.set(object, tt);
     }
 
+    /**
+     * Inject checked for views extends CompoundButton
+     *
+     * @param activity Activity context
+     * @param field    Field needs inject
+     * @param object   Object instance
+     * @throws IllegalAccessException IllegalAccessException
+     */
     @SuppressWarnings("unchecked")
     private static void injectChecked(Activity activity, Field field, Object object) throws IllegalAccessException {
         BindChecked bca = field.getAnnotation(BindChecked.class);
@@ -150,6 +166,14 @@ public class Injection {
         field.set(object, ct);
     }
 
+    /**
+     * Inject visible for views extends View
+     *
+     * @param activity Activity context
+     * @param field    Field needs inject
+     * @param object   Object instance
+     * @throws IllegalAccessException IllegalAccessException
+     */
     @SuppressWarnings("unchecked")
     private static void injectVisible(Activity activity, Field field, Object object) throws IllegalAccessException {
         BindVisible bva = field.getAnnotation(BindVisible.class);
@@ -187,6 +211,13 @@ public class Injection {
         field.set(object, vt);
     }
 
+    /**
+     * Check Index if out of array length
+     *
+     * @param index  Default index
+     * @param length Array length
+     * @return Index checked
+     */
     private static int checkIndex(int index, int length) {
         return index >= length ? 0 : index;
     }

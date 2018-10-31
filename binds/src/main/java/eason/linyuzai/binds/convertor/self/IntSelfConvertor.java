@@ -2,6 +2,9 @@ package eason.linyuzai.binds.convertor.self;
 
 import eason.linyuzai.binds.convertor.IntConvertor;
 
+/**
+ * Type of target value and control value are Integer
+ */
 public class IntSelfConvertor implements IntConvertor<Integer> {
 
     @Override

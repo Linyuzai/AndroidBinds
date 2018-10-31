@@ -20,10 +20,21 @@ import eason.linyuzai.binds.target.attach.VisibleTarget;
 @TargetObject
 public interface TargetMapSupport {
 
+    /**
+     * Set value from Map
+     *
+     * @param map Map
+     */
     default void fromMap(Map<String, String> map) {
         fromMap(map, true);
     }
 
+    /**
+     * Set value from Map
+     *
+     * @param map         Map
+     * @param includeNull If set null when value is null
+     */
     default void fromMap(Map<String, String> map, boolean includeNull) {
         Field[] fields = this.getClass().getDeclaredFields();
         for (Field field : fields) {
@@ -78,6 +89,11 @@ public interface TargetMapSupport {
         }
     }
 
+    /**
+     * Convert to Map
+     *
+     * @return Map
+     */
     default Map<String, String> toMap() {
         Map<String, String> map = new HashMap<>();
         Field[] fields = this.getClass().getDeclaredFields();
@@ -152,10 +168,21 @@ public interface TargetMapSupport {
         return map;
     }
 
+    /**
+     * Set value from Java Bean
+     *
+     * @param entity Java bean
+     */
     default void fromEntity(Object entity) {
         fromEntity(entity, true);
     }
 
+    /**
+     * Set value from Java Bean
+     *
+     * @param entity      Java bean
+     * @param includeNull If set null when value is null
+     */
     default void fromEntity(Object entity, boolean includeNull) {
         Field[] fields = entity.getClass().getDeclaredFields();
         Map<String, String> map = new HashMap<>();
@@ -194,6 +221,13 @@ public interface TargetMapSupport {
         fromMap(map, includeNull);
     }
 
+    /**
+     * Convert to Java Bean
+     *
+     * @param cls Class of Java Bean
+     * @param <T> Type of Java Bean
+     * @return Java Bean
+     */
     default <T> T toEntity(Class<T> cls) {
         T entity = null;
         try {
