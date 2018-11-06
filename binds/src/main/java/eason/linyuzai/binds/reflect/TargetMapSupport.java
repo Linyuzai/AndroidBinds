@@ -237,6 +237,18 @@ public interface TargetMapSupport {
         } catch (InstantiationException e) {
             e.printStackTrace();
         }
+        return toEntity(entity);
+    }
+
+    /**
+     * Convert to Java Bean
+     *
+     * @param entity Instance of Java Bean
+     * @param <T>    Type of Java Bean
+     * @return Java Bean
+     */
+    default <T> T toEntity(T entity) {
+        Class<?> cls = entity.getClass();
         Map<String, String> map = toMap();
         Field[] fields = cls.getDeclaredFields();
         for (Field field : fields) {

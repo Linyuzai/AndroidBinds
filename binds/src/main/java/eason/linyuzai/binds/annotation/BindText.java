@@ -29,7 +29,7 @@ public @interface BindText {
 
     boolean write() default true;
 
-    boolean ignoreSame() default true;
+    boolean ignoreSame() default false;
 
     boolean viewReference() default false;
 }

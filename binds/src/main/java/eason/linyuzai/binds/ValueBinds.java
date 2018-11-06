@@ -117,7 +117,7 @@ public final class ValueBinds {
             if (write) {
                 target.addSetter(text -> {
                     TextView t = twr.get();
-                    if (null == t)
+                    if (null == t || t.getText().toString().equals(text))
                         return;
                     t.post(() -> t.setText(text));
                 });
@@ -147,7 +147,7 @@ public final class ValueBinds {
             WeakReference<View> vwr = new WeakReference<>(view);
             target.addSetter(visible -> {
                 View v = vwr.get();
-                if (null == v || null == visible)
+                if (null == v || null == visible || v.getVisibility() == visible)
                     return;
                 v.post(() -> v.setVisibility(visible));
             });
@@ -186,7 +186,7 @@ public final class ValueBinds {
             if (write) {
                 target.addSetter(checked -> {
                     CompoundButton cb = cbwr.get();
-                    if (null == cb || null == checked)
+                    if (null == cb || null == checked || cb.isChecked() == checked)
                         return;
                     cb.post(() -> cb.setChecked(checked));
                 });
