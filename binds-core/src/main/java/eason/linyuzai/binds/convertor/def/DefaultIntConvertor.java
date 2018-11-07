@@ -1,11 +1,11 @@
-package eason.linyuzai.binds.convertor.self;
+package eason.linyuzai.binds.convertor.def;
 
 import eason.linyuzai.binds.convertor.IntConvertor;
 
 /**
  * Type of target value and control value are Integer
  */
-public class IntSelfConvertor implements IntConvertor<Integer> {
+public class DefaultIntConvertor implements IntConvertor<Integer> {
 
     @Override
     public Integer fromValue(Integer integer) {

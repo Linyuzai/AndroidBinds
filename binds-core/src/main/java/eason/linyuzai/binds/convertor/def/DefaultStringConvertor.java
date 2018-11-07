@@ -1,11 +1,11 @@
-package eason.linyuzai.binds.convertor.self;
+package eason.linyuzai.binds.convertor.def;
 
 import eason.linyuzai.binds.convertor.StringConvertor;
 
 /**
  * Type of target value and control value are String
  */
-public class StringSelfConvertor implements StringConvertor<String> {
+public class DefaultStringConvertor implements StringConvertor<String> {
 
     @Override
     public String fromValue(String s) {

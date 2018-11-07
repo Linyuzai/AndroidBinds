@@ -1,11 +1,11 @@
-package eason.linyuzai.binds.convertor.self;
+package eason.linyuzai.binds.convertor.def;
 
 import eason.linyuzai.binds.convertor.BooleanConvertor;
 
 /**
  * Type of target value and control value are Boolean
  */
-public class BooleanSelfConvertor implements BooleanConvertor<Boolean> {
+public class DefaultBooleanConvertor implements BooleanConvertor<Boolean> {
 
     @Override
     public Boolean fromValue(Boolean b) {

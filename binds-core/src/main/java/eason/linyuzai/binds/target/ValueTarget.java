@@ -1,8 +1,5 @@
 package eason.linyuzai.binds.target;
 
-import android.view.View;
-
-import java.lang.ref.WeakReference;
 import java.util.List;
 
 /**
@@ -44,16 +41,6 @@ public interface ValueTarget<V, T> {
     boolean isIgnoreSame();
 
     void setIgnoreSame(boolean ignoreSame);
-
-    @SuppressWarnings("unchecked")
-    List<WeakReference<? extends View>> getViewReferences();
-
-    @SuppressWarnings("unchecked")
-    <K extends View> K getView(int index);
-
-    default <K extends View> K getView() {
-        return getView(0);
-    }
 
     void setConvertor(Convertor<V, T> convertor);
 
@@ -125,14 +112,16 @@ public interface ValueTarget<V, T> {
 
     /**
      * Listener for value changed
+     *
+     * @param <V>Type of control value
+     * @param <T>Type of target value
      */
     interface Listener<V, T> {
         /**
          * Call this method when value changed
          *
          * @param target ValueTarget
-         * @param v      View
          */
-        void onListen(ValueTarget<V, T> target, View v);
+        void onListen(ValueTarget<V, T> target);
     }
 }

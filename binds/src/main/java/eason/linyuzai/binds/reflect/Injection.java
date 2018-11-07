@@ -19,9 +19,9 @@ import eason.linyuzai.binds.target.BooleanTarget;
 import eason.linyuzai.binds.target.IntTarget;
 import eason.linyuzai.binds.target.StringTarget;
 import eason.linyuzai.binds.target.ValueTarget;
-import eason.linyuzai.binds.target.attach.CheckedTarget;
-import eason.linyuzai.binds.target.attach.TextTarget;
-import eason.linyuzai.binds.target.attach.VisibleTarget;
+import eason.linyuzai.binds.target.def.CheckedTarget;
+import eason.linyuzai.binds.target.def.TextTarget;
+import eason.linyuzai.binds.target.def.VisibleTarget;
 
 public class Injection {
     /**

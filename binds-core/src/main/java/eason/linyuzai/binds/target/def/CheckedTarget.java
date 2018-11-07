@@ -1,4 +1,4 @@
-package eason.linyuzai.binds.target.attach;
+package eason.linyuzai.binds.target.def;
 
 import eason.linyuzai.binds.target.BooleanTarget;
 

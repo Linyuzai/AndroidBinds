@@ -1,8 +1,6 @@
-package eason.linyuzai.binds.convertor.attach;
+package eason.linyuzai.binds.convertor;
 
 import android.view.View;
-
-import eason.linyuzai.binds.convertor.IntConvertor;
 
 /**
  * For visible of View

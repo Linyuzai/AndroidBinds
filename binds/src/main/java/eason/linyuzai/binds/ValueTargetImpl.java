@@ -113,23 +113,6 @@ class ValueTargetImpl<V, T> implements ValueTarget<V, T> {
         this.ignoreSame = ignoreSame;
     }
 
-    @SuppressWarnings("unchecked")
-    @Override
-    public List<WeakReference<? extends View>> getViewReferences() {
-        return viewReferences;
-    }
-
-    @SuppressWarnings("unchecked")
-    @Override
-    public <U extends View> U getView(int index) {
-        return (U) viewReferences.get(index).get();
-    }
-
-    @Override
-    public <U extends View> U getView() {
-        return getView(0);
-    }
-
     @Override
     public void addListener(Listener<V, T> listener) {
         this.listeners.add(listener);

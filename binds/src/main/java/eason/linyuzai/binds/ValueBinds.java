@@ -12,9 +12,9 @@ import java.lang.reflect.InvocationTargetException;
 
 import eason.linyuzai.binds.reflect.Injection;
 import eason.linyuzai.binds.target.ValueTarget;
-import eason.linyuzai.binds.target.attach.CheckedTarget;
-import eason.linyuzai.binds.target.attach.TextTarget;
-import eason.linyuzai.binds.target.attach.VisibleTarget;
+import eason.linyuzai.binds.target.def.CheckedTarget;
+import eason.linyuzai.binds.target.def.TextTarget;
+import eason.linyuzai.binds.target.def.VisibleTarget;
 
 public final class ValueBinds {
 
@@ -207,7 +207,7 @@ public final class ValueBinds {
         for (ValueTarget.Listener<V, T> listener : target.getListeners()) {
             if (null == listener)
                 continue;
-            listener.onListen(target, reference.get());
+            listener.onListen(target);
         }
     }
 }

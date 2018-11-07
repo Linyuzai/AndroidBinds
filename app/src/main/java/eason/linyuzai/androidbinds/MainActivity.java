@@ -3,7 +3,6 @@ package eason.linyuzai.androidbinds;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,12 +14,12 @@ import eason.linyuzai.binds.annotation.TargetObject;
 import eason.linyuzai.binds.convertor.IntConvertor;
 import eason.linyuzai.binds.reflect.TargetMapSupport;
 import eason.linyuzai.binds.target.ValueTarget;
-import eason.linyuzai.binds.target.attach.TextTarget;
-import eason.linyuzai.binds.target.attach.VisibleTarget;
+import eason.linyuzai.binds.target.def.TextTarget;
+import eason.linyuzai.binds.target.def.VisibleTarget;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindText(value = R.id.text, ignoreSame = false)
+    @BindText(R.id.text)
     private TextTarget<String> title;
 
     @TargetObject
@@ -36,14 +35,7 @@ public class MainActivity extends AppCompatActivity {
         ValueBinds.inject(this);
         title.setValue("Android Bind");
         view.setValue("0");
-        user.username.addListener(new ValueTarget.Listener<String, String>() {
-            @Override
-            public void onListen(ValueTarget<String, String> target, View v) {
-                if (target.getValue().isEmpty()) {
-
-                }
-            }
-        });
+        user.username.addListener(ValueTarget::syncValue);
         //user.username.addListener(() -> Toast.makeText(MainActivity.this, user.toString(), Toast.LENGTH_SHORT).show());
         findViewById(R.id.button).setOnClickListener(v -> {
             view.setValue(view.getValue().equals("0") ? "8" : "0");
