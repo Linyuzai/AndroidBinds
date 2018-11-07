@@ -57,9 +57,9 @@ public interface ValueTarget<V, T> {
 
     void setConvertor(Convertor<V, T> convertor);
 
-    void addListener(Listener listener);
+    void addListener(Listener<V, T> listener);
 
-    List<Listener> getListeners();
+    List<Listener<V, T>> getListeners();
 
     /**
      * An interface to notify target source
@@ -126,10 +126,13 @@ public interface ValueTarget<V, T> {
     /**
      * Listener for value changed
      */
-    interface Listener {
+    interface Listener<V, T> {
         /**
          * Call this method when value changed
+         *
+         * @param target ValueTarget
+         * @param v      View
          */
-        void onListen(ValueTarget target, View v);
+        void onListen(ValueTarget<V, T> target, View v);
     }
 }

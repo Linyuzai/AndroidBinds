@@ -20,7 +20,7 @@ class ValueTargetImpl<V, T> implements ValueTarget<V, T> {
     private boolean ignoreSame;
     private List<Setter<T>> setters = new ArrayList<>();
     private Convertor<V, T> convertor;
-    private List<Listener> listeners = new ArrayList<>();
+    private List<Listener<V, T>> listeners = new ArrayList<>();
     private List<WeakReference<? extends View>> viewReferences = new ArrayList<>();
 
     /**
@@ -131,12 +131,12 @@ class ValueTargetImpl<V, T> implements ValueTarget<V, T> {
     }
 
     @Override
-    public void addListener(Listener listener) {
+    public void addListener(Listener<V, T> listener) {
         this.listeners.add(listener);
     }
 
     @Override
-    public List<Listener> getListeners() {
+    public List<Listener<V, T>> getListeners() {
         return listeners;
     }
 

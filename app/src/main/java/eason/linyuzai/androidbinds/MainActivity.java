@@ -36,10 +36,12 @@ public class MainActivity extends AppCompatActivity {
         ValueBinds.inject(this);
         title.setValue("Android Bind");
         view.setValue("0");
-        user.username.addListener(new ValueTarget.Listener() {
+        user.username.addListener(new ValueTarget.Listener<String, String>() {
             @Override
-            public void onListen(ValueTarget target, View v) {
-                target.syncValue();
+            public void onListen(ValueTarget<String, String> target, View v) {
+                if (target.getValue().isEmpty()) {
+
+                }
             }
         });
         //user.username.addListener(() -> Toast.makeText(MainActivity.this, user.toString(), Toast.LENGTH_SHORT).show());

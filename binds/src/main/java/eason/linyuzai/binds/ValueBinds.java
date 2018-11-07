@@ -203,8 +203,8 @@ public final class ValueBinds {
      *
      * @param target which listeners need perform
      */
-    private static void performListener(ValueTarget<?, ?> target, WeakReference<? extends View> reference) {
-        for (ValueTarget.Listener listener : target.getListeners()) {
+    private static <V, T> void performListener(ValueTarget<V, T> target, WeakReference<? extends View> reference) {
+        for (ValueTarget.Listener<V, T> listener : target.getListeners()) {
             if (null == listener)
                 continue;
             listener.onListen(target, reference.get());
