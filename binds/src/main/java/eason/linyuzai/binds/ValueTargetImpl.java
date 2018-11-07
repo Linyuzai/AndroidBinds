@@ -99,6 +99,11 @@ class ValueTargetImpl<V, T> implements ValueTarget<V, T> {
     }
 
     @Override
+    public void syncValue() {
+        setValue(value);
+    }
+
+    @Override
     public boolean isIgnoreSame() {
         return ignoreSame;
     }

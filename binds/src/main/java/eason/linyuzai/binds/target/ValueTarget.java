@@ -39,6 +39,8 @@ public interface ValueTarget<V, T> {
 
     void setStringValue(String value);
 
+    void syncValue();
+
     boolean isIgnoreSame();
 
     void setIgnoreSame(boolean ignoreSame);
@@ -128,6 +130,6 @@ public interface ValueTarget<V, T> {
         /**
          * Call this method when value changed
          */
-        void onListen();
+        void onListen(ValueTarget target, View v);
     }
 }

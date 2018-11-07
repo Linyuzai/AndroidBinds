@@ -104,7 +104,7 @@ public final class ValueBinds {
                     @Override
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
                         target.setTargetValue(s.toString(), false);
-                        performListener(target);
+                        performListener(target, twr);
                     }
 
                     @Override
@@ -180,7 +180,7 @@ public final class ValueBinds {
             if (read) {
                 compoundButton.setOnCheckedChangeListener((v, isChecked) -> {
                     target.setTargetValue(isChecked, false);
-                    performListener(target);
+                    performListener(target, cbwr);
                 });
             }
             if (write) {
@@ -203,11 +203,11 @@ public final class ValueBinds {
      *
      * @param target which listeners need perform
      */
-    private static void performListener(ValueTarget<?, ?> target) {
+    private static void performListener(ValueTarget<?, ?> target, WeakReference<? extends View> reference) {
         for (ValueTarget.Listener listener : target.getListeners()) {
             if (null == listener)
                 continue;
-            listener.onListen();
+            listener.onListen(target, reference.get());
         }
     }
 }
